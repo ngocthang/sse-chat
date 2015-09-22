@@ -4,10 +4,10 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-#default: &default
-#  adapter: sqlite3
-#  pool: 5
-#  timeout: 5000
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 #
 #development:
 #  <<: *default
@@ -25,15 +25,17 @@
 #  database: db/production.sqlite3
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  reconnect: false
-  database: 'd3djsa0vtitm1b'
-  pool: 5
-  username: 'wxwqbjpdzngdne'
-  port: 5432
-  host: "ec2-54-243-149-147.compute-1.amazonaws.com"
-  password: "YAqjk4QoecduY8teetCraPC765"
+  <<: *default
+  database: db/development.sqlite3
+#  adapter: postgresql
+#  encoding: unicode
+#  reconnect: false
+#  database: 'd3djsa0vtitm1b'
+#  pool: 5
+#  username: 'wxwqbjpdzngdne'
+#  port: 5432
+#  host: "ec2-54-243-149-147.compute-1.amazonaws.com"
+#  password: "YAqjk4QoecduY8teetCraPC765"
 #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and

@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
         t = render_to_string(partial: 'comment', formats: [:html], locals: {comment: comment})
         sse.write(t)
       end
+      #   Comment.on_change do |comment|
+      #   sse.write(comment)
+      #   end
     rescue IOError
       # Client Disconnected
     ensure
@@ -24,13 +27,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    respond_to do |format|
-      if current_user
-        @comment = current_user.comments.build(comment_params)
-        @comment.save
-        format.html {redirect_to root_url}
-        format.js
-      end
+    if current_user
+      @comment = current_user.comments.build(comment_params)
+      @comment.save
     end
   end
 

@@ -8,10 +8,11 @@
     <div class="panel-body">
       <ul class="media-list">
         <%= render @comments %>
-        <% if false %><%= render 'templates/comment' %><% end %>
       </ul>
     </div>
   </div>
 <% else %>
   <%= render 'welcome' %>
 <% end %>
+
+<%# render 'templates/comment' %>

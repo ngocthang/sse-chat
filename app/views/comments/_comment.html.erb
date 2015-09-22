@@ -7,3 +7,5 @@
     <p><%= comment.body %></p>
   </div>
 </li>
+<h4 class="media-heading"><%= link_to comment.user.name, comment.user.profile_url, target: '_blank' %> says
+    <small class="text-muted">[at <%= comment.timestamp %>]</small></h4>

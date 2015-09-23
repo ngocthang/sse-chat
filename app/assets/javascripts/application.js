@@ -16,3 +16,4 @@
 //= require_tree .
 //= require comments
 //= require underscore
+//= require cssemoticons

@@ -15,4 +15,12 @@
   <%= render 'welcome' %>
 <% end %>
 
-<%# render 'templates/comment' %>
+<script>
+  $('.media-body').emoticonize();
+  $("#comment_body").keypress(function(event) {
+    if (event.which == 13 && !event.shiftKey) {
+      event.preventDefault();
+      $("#new_comment").submit();
+    }
+  });
+</script>
